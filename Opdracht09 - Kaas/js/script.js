@@ -81,11 +81,11 @@ function checkWin(){
         }
         
         //diagonaal
-        if(box[0] === box[4] && box[4] === box[8]){
+        if(box[2] === box[4] && box[4] === box[6]){
             winnerSymbol = currentPlayer.symbol;
             showWinningCombination([2,4,6]);
         }  
-        if(box[2] === box[4] && box[4] === box[6]){
+        if(box[0] === box[4] && box[4] === box[8]){
             winnerSymbol = currentPlayer.symbol;
             showWinningCombination([0,4,8]);
         }
@@ -96,12 +96,12 @@ function checkWin(){
             player1.points++;
         }
         else{
-            player1.points++;
+            player2.points++;
         }
-        gameDone = false;
+        gameDone = true;
         console.log(currentPlayer.name + " wins!")
         document.querySelector("#points").innerHTML = "Points: " + currentPlayer.points;
-        document.querySelector("#resetbutton").disabled = true;
+        document.querySelector("#resetbutton").disabled = false;
     }    
 }
 
