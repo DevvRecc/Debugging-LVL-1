@@ -24,7 +24,7 @@ init();
 function updateLinkedIn(){
     stageZoekActiesStatus[0] = true;
     console.log("LinkedIn profiel geupdate.");
-    document.querySelector(".actie2").disabled = true;
+    document.querySelector(".actie2").disabled = false;
 }
 
 function schrijfCv(){
