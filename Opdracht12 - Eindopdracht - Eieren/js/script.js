@@ -43,6 +43,7 @@ board = {
         }
     },
 
+
     switchPlayer(){
         if (this.currentPlayer === player1) {
             this.currentPlayer = player2;
