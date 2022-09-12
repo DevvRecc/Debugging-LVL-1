@@ -18,7 +18,7 @@ board = {
     box: [1,2,3,4,5,6,7,8,9],
     winningCombination: [],
     winConditions: [
-        h1 = [0,1,3],
+        h1 = [0,1,2],
         h2 = [3,4,5],
         h3 = [6,7,8],
 
@@ -32,13 +32,13 @@ board = {
 
     registerClick(id){
         if(this.gameDone == false){
-            if(this.box[id-1] != "X" && this.box[id-1] == "O" ){
+            if(this.box[id-1] != "X" && this.box[id-1] != "O" ){
                 var element = document.querySelector(".box" + id);
                 element.innerHTML = this.currentPlayer.symbol;
                 this.box[id-1] = this.currentPlayer.symbol;
                 this.doMove();
                 this.checkWin();
-                this.switchPlayer();  
+                this.switchPlayer();
             } 
         }
     },
