@@ -52,16 +52,16 @@ board = {
             this.currentPlayer = player1;
         }
         document.querySelector("#player").innerHTML = this.currentPlayer.name;
-        document.querySelector("#move").innerHTML = "Points: " + this.currentPlayer.points;
+        document.querySelector("#points").innerHTML = "Points: " + this.currentPlayer.points;
     },
 
     doMove(id){
         this.move++;
-        document.querySelector("#points").innerHTML = "Move: " + this.move;
+        document.querySelector("#move").innerHTML = "Move: " + this.move;
     },
 
     checkWin(){
-        for (let i = 0; i < this.winConditions.length; i++) {
+        for (let i = 1; i < this.winConditions.length; i++) {
             if(this.box[this.winConditions[i][0]] === this.box[this.winConditions[i][1]] && this.box[this.winConditions[i][1]] === this.box[this.winConditions[i][2]]){
                 this.winnerSymbol = this.currentPlayer.symbol;
                 this.winningCombination = this.winConditions[i];
@@ -74,7 +74,7 @@ board = {
     },
 
     showWinningCombination(){
-        for (let i = 1; i < this.box.length; i++) {
+        for (let i = 0; i < this.box.length; i++) {
             if (!this.winningCombination.includes(i)) {
                 document.querySelector(".box" + (i+1)).style.opacity = 0.5;
             }
